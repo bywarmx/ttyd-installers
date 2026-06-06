@@ -51,6 +51,7 @@ Variables principales:
 - `TTYD_HOME`: home del usuario real. Default: `/home/${TTYD_RUN_USER}`
 - `TTYD_CWD`: carpeta inicial de la terminal. Default: igual a `TTYD_HOME`
 - `TTYD_SHELL`: shell que abre ttyd. Default: `/bin/bash`
+- `TTYD_FONT_SIZE`: tamano de letra de ttyd. Default: `16`
 - `TTYD_TERM`: valor `TERM` para ttyd. Default: `xterm-256color`
 - `TTYD_COLORTERM`: valor `COLORTERM` para ttyd. Default: `truecolor`
 - `SERVICE_NAME`: nombre del servicio systemd. Default: `ttyd-direct`

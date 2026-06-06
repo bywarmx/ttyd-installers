@@ -12,6 +12,7 @@ TTYD_RUN_GROUP="${TTYD_RUN_GROUP:-${TTYD_RUN_USER}}"
 TTYD_HOME="${TTYD_HOME:-/home/${TTYD_RUN_USER}}"
 TTYD_CWD="${TTYD_CWD:-${TTYD_HOME}}"
 TTYD_SHELL="${TTYD_SHELL:-/bin/bash}"
+TTYD_FONT_SIZE="${TTYD_FONT_SIZE:-16}"
 TTYD_TERM="${TTYD_TERM:-xterm-256color}"
 TTYD_COLORTERM="${TTYD_COLORTERM:-truecolor}"
 SERVICE_NAME="${SERVICE_NAME:-ttyd-direct}"
@@ -114,7 +115,7 @@ Environment=COLORTERM=${TTYD_COLORTERM}
 Environment=HOME=${TTYD_HOME}
 Environment=SHELL=${TTYD_SHELL}
 WorkingDirectory=${TTYD_CWD}
-ExecStart=${TTYD_BIN} -i 127.0.0.1 -p ${TTYD_PORT} -b ${TTYD_PATH} -W -w ${TTYD_CWD} -c ${TTYD_USER}:${TTYD_PASSWORD} ${TTYD_SHELL}
+ExecStart=${TTYD_BIN} -i 127.0.0.1 -p ${TTYD_PORT} -b ${TTYD_PATH} -W -w ${TTYD_CWD} -c ${TTYD_USER}:${TTYD_PASSWORD} -t fontSize=${TTYD_FONT_SIZE} ${TTYD_SHELL}
 Restart=always
 RestartSec=2
 
