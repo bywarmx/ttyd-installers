@@ -152,6 +152,7 @@ EOF
 
 systemctl daemon-reload
 systemctl enable --now ttyd-protected.service ttyd-filemanager.service
+systemctl restart ttyd-protected.service ttyd-filemanager.service
 
 apache2ctl configtest
 systemctl reload apache2

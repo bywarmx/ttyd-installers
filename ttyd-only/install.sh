@@ -124,6 +124,7 @@ EOF
 
 systemctl daemon-reload
 systemctl enable --now "${SERVICE_NAME}.service"
+systemctl restart "${SERVICE_NAME}.service"
 
 apache2ctl configtest
 systemctl reload apache2
