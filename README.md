@@ -25,37 +25,70 @@ Para ejecutar los scripts correctamente, asegúrate de contar con:
 
 ---
 
-## 🚀 Instrucciones de Uso
+## 🚀 Métodos de Instalación
 
-### Opción A: Instalar Filemanager + Terminal Integrada
-Entra al directorio correspondiente y ejecuta el instalador:
+Puedes realizar la instalación clonando este repositorio o ejecutando directamente el script mediante un comando de una sola línea (`curl`).
+
+### Método A: Clonando el repositorio (Recomendado)
+
+Ideal si deseas conservar los archivos localmente o revisar la estructura de antemano.
+
 ```bash
-cd filemanager-ttyd
-sudo ./install.sh
+# 1. Clonar el repositorio
+git clone https://github.com/bywarmx/ttyd-installers.git
+
+# 2. Navegar a la carpeta del repositorio
+cd ttyd-installers
 ```
-*También puedes pasar variables de entorno opcionales para personalizar la instalación:*
-```bash
-sudo DOMAIN=midominio.com TTYD_USER=admin TTYD_PASSWORD=123456 ./install.sh
-```
-> [!NOTE]  
-> Para ver todas las variables de entorno de personalización admitidas, consulta el [README de filemanager-ttyd](./filemanager-ttyd/README.md).
+
+* **Para instalar Filemanager + ttyd:**
+  ```bash
+  cd filemanager-ttyd
+  sudo ./install.sh
+  ```
+
+* **Para instalar Solo ttyd:**
+  ```bash
+  cd ttyd-only
+  sudo ./install.sh
+  ```
 
 ---
 
-### Opción B: Instalar Solo Terminal Web (ttyd)
-Entra al directorio correspondiente y ejecuta el instalador:
+### Método B: Instalación directa vía `curl` (Sin clonar)
+
+Descarga y ejecuta el instalador que prefieras de forma directa. Al finalizar, el script descargado se puede eliminar de forma segura.
+
+* **Para instalar Filemanager + ttyd:**
+  ```bash
+  curl -fsSL https://raw.githubusercontent.com/bywarmx/ttyd-installers/main/filemanager-ttyd/install.sh -o install-fm.sh
+  chmod +x install-fm.sh
+  sudo ./install-fm.sh
+  rm install-fm.sh
+  ```
+
+* **Para instalar Solo ttyd (te solicitará interactivamente el usuario y contraseña en consola):**
+  ```bash
+  curl -fsSL https://raw.githubusercontent.com/bywarmx/ttyd-installers/main/ttyd-only/install.sh -o install-ttyd.sh
+  chmod +x install-ttyd.sh
+  sudo ./install-ttyd.sh
+  rm install-ttyd.sh
+  ```
+
+---
+
+## ⚙️ Personalización Avanzada
+
+Ambos instaladores admiten variables de entorno opcionales para personalizar rutas, puertos, dominios y credenciales. Por ejemplo:
+
 ```bash
-cd ttyd-only
-sudo ./install.sh
-```
-*Al ejecutarlo, te solicitará interactivamente el usuario y contraseña para la terminal. También puedes personalizar parámetros mediante variables de entorno:*
-```bash
+# Cambiar dominio y credenciales del filemanager + ttyd
+sudo DOMAIN=midominio.com TTYD_USER=admin TTYD_PASSWORD=123456 ./install.sh
+
+# Cambiar puerto y ruta de acceso para ttyd-only
 sudo DOMAIN=midominio.com TTYD_PATH=/terminal TTYD_PORT=7681 ./install.sh
 ```
-> [!NOTE]  
-> Para ver todas las variables de entorno de personalización admitidas, consulta el [README de ttyd-only](./ttyd-only/README.md).
 
----
-
-## 📄 Licencia y Notas
-Estos scripts están diseñados para automatizar despliegues rápidos y configurar los proxys inversos necesarios en Apache, así como activar el soporte de colores completos (`xterm-256color`) en las terminales web.
+Para ver la lista completa de variables de entorno disponibles, consulta los README internos:
+- [Documentación detallada de filemanager-ttyd](./filemanager-ttyd/README.md)
+- [Documentación detallada de ttyd-only](./ttyd-only/README.md)
