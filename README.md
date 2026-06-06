@@ -92,3 +92,9 @@ sudo DOMAIN=midominio.com TTYD_PATH=/terminal TTYD_PORT=7681 ./install.sh
 Para ver la lista completa de variables de entorno disponibles, consulta los README internos:
 - [Documentación detallada de filemanager-ttyd](./filemanager-ttyd/README.md)
 - [Documentación detallada de ttyd-only](./ttyd-only/README.md)
+
+---
+
+## 🙌 Créditos
+
+- IA: **CODEX**
